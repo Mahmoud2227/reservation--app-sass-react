@@ -1,0 +1,25 @@
+@use "./animations" as *;
+@use "./mixins" as *;
+@use "./variables" as *;
+
+.section__padding {
+    padding: 2rem;
+
+    @include smMinBreakPoint {
+        padding: 2rem 4rem;
+    }
+
+    @include mdMinBreakPoint {
+        padding: 2rem 9.5rem;
+    }
+}
+
+.scale-up-center {
+    -webkit-animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+.slide-arrow {
+    -webkit-animation: slide1 1s ease-in-out infinite;
+    animation: slide1 1s ease-in-out infinite;
+}
