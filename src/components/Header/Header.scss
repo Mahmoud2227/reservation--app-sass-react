@@ -1,0 +1,65 @@
+@use "../../SassStyles/variables" as *;
+
+.header {
+    background: $color-primary;
+    padding-block: 1rem;
+
+    .header__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .header__logo {
+            font-weight: 700;
+            font-size: 31px;
+            line-height: 46px;
+            text-align: center;
+
+            span:first-child {
+                color: white;
+            }
+
+            span:last-child {
+                color: $color-secondary;
+            }
+        }
+
+        .header__controls {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            button {
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 27px;
+                background: $color-secondary;
+                color: white;
+                border-radius: 30px;
+                border: none;
+                padding: 0.5rem 1rem;
+                cursor: pointer;
+
+                transition: 0.2s;
+
+                &:first-child {
+                    margin-right: 1rem;
+                }
+
+                &:hover {
+                    background: white;
+                    color: $color-secondary;
+                }
+
+                svg {
+                    margin-right: 0.5rem;
+                }
+            }
+        }
+    }
+
+    .header__content {
+        max-width: 500px;
+        padding-block: 11rem 8.5rem;
+        background-image: url(../../assets/Header.png);
+    }
+}

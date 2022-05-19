@@ -1,0 +1,57 @@
+@use "../../SassStyles/variables" as *;
+@use "../../SassStyles/mixins" as *;
+
+.navbar {
+    margin-top: 1rem;
+    max-width: 700px;
+
+    .navbar__links {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .navbar__links-item {
+            list-style: none;
+            color: white;
+            font-weight: 700;
+            font-size: 15px;
+            line-height: 30px;
+            text-align: center;
+
+            a {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 10px;
+                padding-bottom: 5px;
+                transition: 0.2s;
+
+                @include mdMinBreakPoint {
+                    flex-direction: row;
+                }
+
+                &::after {
+                    content: "";
+                    width: 0;
+                    height: 2px;
+                    background: $color-secondary;
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    transition: 0.2s;
+                }
+
+                &:hover {
+                    color: $color-secondary;
+
+                    &::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,48 @@
+@use "../../SassStyles/variables" as *;
+
+.hero {
+    padding-block: 12rem;
+    background-image: url(../../assets/Header.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    p,
+    h1 {
+        max-width: 700px;
+    }
+
+    h1 {
+        font-weight: 700;
+        font-size: 50px;
+        line-height: 78px;
+        color: $color-primary;
+    }
+
+    p {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 34px;
+        color: $color-primary;
+    }
+
+    a {
+        position: relative;
+        display: block;
+        width: fit-content;
+        margin-top: 2rem;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 23px;
+        transition: 0.2s;
+
+        span {
+            margin-left: 10px;
+        }
+
+        &:hover {
+            color: $color-secondary;
+            text-decoration: underline;
+        }
+    }
+}

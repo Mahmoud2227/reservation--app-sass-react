@@ -10,7 +10,7 @@
     }
 
     @include mdMinBreakPoint {
-        padding: 2rem 9.5rem;
+        padding: 2rem 6rem;
     }
 }
 
@@ -20,6 +20,7 @@
 }
 
 .slide-arrow {
-    -webkit-animation: slide1 1s ease-in-out infinite;
-    animation: slide1 1s ease-in-out infinite;
+    display: inline-block;
+    -webkit-animation: slide-arrow 1s ease-in-out infinite;
+    animation: slide-arrow 1s ease-in-out infinite;
 }

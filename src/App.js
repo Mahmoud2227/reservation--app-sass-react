@@ -3,6 +3,8 @@ import Home from "./Pages/Home/Home";
 import Hotel from "./Pages/Hotel/Hotel";
 import List from "./Pages/List/List";
 
+import "./App.scss";
+
 const App = () => {
     return (
         <BrowserRouter>
