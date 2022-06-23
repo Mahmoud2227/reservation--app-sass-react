@@ -1,6 +1,7 @@
 @use "../../SassStyles/variables" as *;
 
 .hero {
+    position: relative;
     padding-block: 12rem;
     background-image: url(../../assets/Header.png);
     background-repeat: no-repeat;

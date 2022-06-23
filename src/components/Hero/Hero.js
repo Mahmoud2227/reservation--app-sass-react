@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import "./Hero.scss";
+import SearchBar from "../SearchBar/SearchBar";
 
 const Hero = () => {
     return (
@@ -16,6 +17,7 @@ const Hero = () => {
                     <FontAwesomeIcon icon={faArrowRight} />
                 </span>
             </a>
+            <SearchBar />
         </div>
     );
 };

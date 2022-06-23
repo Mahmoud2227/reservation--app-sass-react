@@ -7,14 +7,22 @@ import "./App.scss";
 
 const App = () => {
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/hotels" element={<List />} />
-                <Route path="/hotels/:id" element={<Hotel />} />
-            </Routes>
-        </BrowserRouter>
-    );
+			<BrowserRouter>
+				<Routes>
+					<Route path='/' element={<Home />} />
+					<Route path='/hotels' element={<List />} />
+					<Route path='/hotels/:id' element={<Hotel />} />
+				</Routes>
+				<br />
+				<br />
+				<br />
+				<br />
+				<br />
+				<br />
+				<br />
+				<br />
+			</BrowserRouter>
+		);
 };
 
 export default App;

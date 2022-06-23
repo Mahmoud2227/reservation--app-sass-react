@@ -1,0 +1,72 @@
+@use "../../SassStyles/variables" as *;
+
+.searchBar {
+	position: absolute;
+	bottom: -25px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: calc(100% - 12rem);
+	.searchBar__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		min-height: 4rem;
+		padding: 0.5rem;
+		background-color: $color-primary;
+		border: 3px solid $color-secondary;
+
+		.searchBar__item {
+			display: flex;
+			align-items: stretch;
+			justify-content: center;
+			min-height: 1rem;
+			color: white;
+
+			input {
+				background-color: $color-primary;
+				border: none;
+				outline: none;
+				color: white;
+				caret-color: white;
+
+				&::placeholder {
+					color: white;
+				}
+			}
+
+			svg {
+				margin-right: 0.5rem;
+			}
+
+			.searchBar__item-button {
+				padding: 1rem 1.5rem;
+				background-color: $color-secondary;
+				font-size: 15px;
+				font-weight: 400;
+				border: none;
+				outline: none;
+				border-radius: 30px;
+				color: white;
+				cursor: pointer;
+			}
+
+			& > span {
+				cursor: pointer;
+			}
+
+			.searchBar__item-data-range {
+				position: absolute;
+				top: 50px;
+			}
+
+			.searchBar__item-options {
+				position: absolute;
+				top: 50px;
+				background-color: white;
+				color: black;
+				border-radius: 5px;
+				box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
+			}
+		}
+	}
+}

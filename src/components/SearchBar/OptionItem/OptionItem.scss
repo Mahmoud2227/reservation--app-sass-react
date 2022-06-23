@@ -1,0 +1,32 @@
+@use "../../../SassStyles/variables" as *;
+
+.option {
+	width: 200px;
+	display: flex;
+	justify-content: space-between;
+	margin: 1rem;
+
+	.option__counter {
+		min-width: 90px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		font-size: 12px;
+		color: black;
+
+		button {
+			width: 30px;
+			height: 30px;
+			color: white;
+			background-color: $color-secondary;
+			border: none;
+			outline: none;
+			cursor: pointer;
+
+			&:disabled {
+				opacity: 0.5;
+				cursor: not-allowed;
+			}
+		}
+	}
+}
