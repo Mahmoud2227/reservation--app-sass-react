@@ -24,7 +24,7 @@ const SearchBar = () => {
 	const [openOptions, setOpenOptions] = useState(false);
 	const [options, setOptions] = useState({
 		adult: 1,
-		children: 1,
+		children: 0,
 		rooms: 1,
 	});
 	return (

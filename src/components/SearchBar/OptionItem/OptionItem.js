@@ -11,7 +11,9 @@ const OptionItem = ({optionName, setFunction, optionValue}) => {
 		<div className='option'>
 			<span className='option__text'>{optionName[0].toUpperCase() + optionName.slice(1)}</span>
 			<div className='option__counter'>
-				<button disabled={optionValue <= 1} onClick={() => handleOptions(optionName, "dec")}>
+				<button
+					disabled={optionValue <= (optionName === "children" ? 0 : 1)}
+					onClick={() => handleOptions(optionName, "dec")}>
 					-
 				</button>
 				<span>{optionValue}</span>
