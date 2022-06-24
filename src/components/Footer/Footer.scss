@@ -1,0 +1,118 @@
+@use "../../SassStyles/variables" as *;
+
+.footer {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	background-color: $color-primary;
+
+	padding-block: 5rem;
+
+	& * {
+		color: white;
+	}
+	.footer__info {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 1.5rem;
+
+		.footer__info-logo {
+			font-weight: 700;
+			font-size: 31px;
+			line-height: 46px;
+
+			span:last-child {
+				color: $color-secondary;
+			}
+		}
+
+		.footer__info-text {
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 24px;
+		}
+
+		.footer__info-social {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-top: 1.5rem;
+
+			max-width: 150px;
+
+			a {
+				transition: 0.5s;
+			}
+
+			a:hover {
+				transform: translateY(-3px);
+
+				& svg path {
+					transition: 0.3s;
+					fill: $color-secondary;
+				}
+			}
+		}
+	}
+	.footer__links {
+		flex: 1;
+		display: flex;
+		justify-content: space-evenly;
+
+		.footer__links-list {
+			h4 {
+				font-weight: 500;
+				font-size: 20px;
+				line-height: 30px;
+				margin-bottom: 1.5rem;
+			}
+
+			ul {
+				list-style: none;
+				font-weight: 400;
+				font-size: 16px;
+				line-height: 26px;
+
+				li {
+					color: #d9dbe1;
+				}
+
+				li:not(:last-child) {
+					margin-bottom: 1rem;
+				}
+			}
+		}
+	}
+	.footer__email {
+		h4 {
+			font-weight: 500;
+			font-size: 20px;
+			line-height: 30px;
+			margin-bottom: 1.5rem;
+		}
+
+		input {
+			border: none;
+			outline: none;
+			color: $color-primary;
+			background-color: rgb(255 255 255 / 20%);
+			border-radius: 8px;
+			padding: 0.5rem 1rem;
+
+			// background-color: transparent;
+      
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 24px;
+
+			&::placeholder {
+				color: #d9dbe1;
+			}
+      
+			&:focus {
+        background-color: rgb(255 255 255 / 50%);
+			}
+		}
+	}
+}

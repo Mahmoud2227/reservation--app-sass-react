@@ -13,14 +13,6 @@ const App = () => {
 					<Route path='/hotels' element={<List />} />
 					<Route path='/hotels/:id' element={<Hotel />} />
 				</Routes>
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
 			</BrowserRouter>
 		);
 };

@@ -1,4 +1,4 @@
-import {Featured, Header, Hero} from "../../components";
+import {Featured, Footer, Header, Hero} from "../../components";
 import BecomeHost from "../../components/BecomeHost/BecomeHost";
 import PopularCities from "../../components/PopularCities/PopularCities";
 
@@ -12,6 +12,7 @@ const Home = () => {
 				<PopularCities />
 				<BecomeHost />
 			</div>
+			<Footer />
 		</>
 	);
 };

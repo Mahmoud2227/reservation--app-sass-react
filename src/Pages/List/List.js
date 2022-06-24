@@ -1,10 +1,11 @@
 import React from "react";
-import {Header} from "../../components";
+import {Footer, Header} from "../../components";
 
 const List = () => {
 	return (
 		<>
 			<Header />
+			<Footer />
 		</>
 	);
 };
