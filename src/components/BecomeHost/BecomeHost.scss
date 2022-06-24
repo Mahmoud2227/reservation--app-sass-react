@@ -1,0 +1,68 @@
+@use "../../SassStyles/variables" as *;
+
+.become-host {
+	background-image: url("../../assets/become-host.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+
+	border-radius: 10px;
+
+	.become-host__content {
+		position: relative;
+		width: 50%;
+		padding: 7.5rem 9rem;
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(16, 55, 92, 0.76);
+			border-radius: 10px 0 0 10px;
+		}
+
+		& > * {
+			color: white;
+			position: relative;
+			z-index: 1;
+		}
+
+		h2 {
+			font-weight: 700;
+			font-size: 30px;
+			line-height: 37px;
+			color: white;
+			margin-bottom: 0.6rem;
+		}
+
+		p {
+			font-weight: 500;
+			font-size: 20px;
+			line-height: 24px;
+			margin-bottom: 1.5rem;
+		}
+
+		button {
+			font-weight: 700;
+			font-size: 15px;
+			line-height: 18px;
+			border-radius: 10px;
+			background-color: $color-secondary;
+      padding: 1rem 3rem;
+
+      border: none;
+      outline: none;
+
+      cursor: pointer;
+      transition: 0.2s;
+
+      &:hover {
+        background-color: white;
+        color: $color-secondary;
+      }
+		}
+	}
+}
