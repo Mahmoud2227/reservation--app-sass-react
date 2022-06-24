@@ -1,0 +1,83 @@
+@use "../../SassStyles/variables" as *;
+
+.popular-cities {
+	margin-top: 1rem;
+	h2 {
+		position: relative;
+		width: fit-content;
+		font-weight: 700;
+		font-size: 30px;
+		line-height: 37px;
+		text-transform: capitalize;
+
+		color: $color-primary;
+
+		margin-bottom: 3rem;
+
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: -5px;
+			left: 0;
+
+			width: 55%;
+			height: 2px;
+			background-color: $color-secondary;
+		}
+	}
+
+	.popular-cities__list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 3rem;
+
+		list-style: none;
+
+		li {
+			position: relative;
+			box-shadow: 0px 7px 17px 5px rgba(0, 0, 0, 0.25);
+      max-height: 740px;
+
+      cursor: pointer;
+
+      transition: 0.2s;
+
+      &:hover {
+        box-shadow: 0px 7px 17px 5px rgba(0, 0, 0, 0.5);
+      }
+
+			&::after {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+        background-color: rgba(51, 51, 51, 0.49);;
+				transition: 0.2s;
+			}
+
+      &:hover::after{
+        background-color: rgba(51, 51, 51, 0);
+      }
+
+			&:nth-child(even) {
+				margin-top: 5rem;
+			}
+
+			span {
+				font-weight: 700;
+				font-size: 20px;
+				line-height: 27px;
+				color: white;
+
+				position: absolute;
+				bottom: 45px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
+	}
+}
