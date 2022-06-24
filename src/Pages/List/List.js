@@ -1,7 +1,12 @@
 import React from "react";
+import {Header} from "../../components";
 
 const List = () => {
-    return <div>List</div>;
+	return (
+		<>
+			<Header />
+		</>
+	);
 };
 
 export default List;

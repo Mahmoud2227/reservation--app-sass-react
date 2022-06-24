@@ -1,0 +1,6 @@
+@use "../../../SassStyles/variables" as *;
+
+.carousel-arrow {
+  padding: 1rem 1.5rem;
+  background-color: $color-secondary;
+}

@@ -1,0 +1,94 @@
+@use "../../SassStyles/variables" as *;
+
+.featured {
+	width: 100%;
+	// margin-top: 6rem;
+
+	.featured__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 4rem;
+	}
+
+	.featured__container-title {
+    flex: 1;
+
+    h2 {
+      position: relative;
+      width: fit-content;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 37px;
+      text-transform: capitalize;
+  
+      color: $color-primary;
+  
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+  
+        width: 60%;
+        height: 2px;
+        background-color: $color-secondary;
+      }
+    }
+	}
+
+	.featured__container-tabs {
+		flex: 1;
+		display: flex;
+		justify-content: space-between;
+
+		button {
+			border: 1px #333333 solid;
+			outline: none;
+
+			padding: 1rem;
+			border-radius: 30px;
+			color: #333333;
+			background-color: white;
+
+			transition: 0.2s;
+			cursor: pointer;
+
+			&:hover,
+			.active {
+				background-color: $color-secondary;
+				color: white;
+				border-color: $color-secondary;
+			}
+
+			svg {
+				margin-right: 0.5rem;
+			}
+		}
+	}
+
+	.featured__container-arrows {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+		button {
+			padding: 1rem 1.5rem;
+      
+      border: none;
+      outline: none;
+      border-radius: 30px;
+      
+      cursor: not-allowed;
+      
+      &.active {
+        background-color: $color-secondary;
+        color: white;
+        cursor: pointer;
+      }
+
+      &:first-child {
+        margin-right: 5px;
+      }
+		}
+	}
+}

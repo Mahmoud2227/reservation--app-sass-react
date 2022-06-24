@@ -6,6 +6,8 @@
 	left: 50%;
 	transform: translateX(-50%);
 	width: calc(100% - 12rem);
+	z-index: 1;
+	
 	.searchBar__container {
 		display: flex;
 		align-items: center;
