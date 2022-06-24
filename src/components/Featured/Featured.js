@@ -13,6 +13,9 @@ import Carousel from "react-multi-carousel";
 
 import "./Featured.scss";
 import "react-multi-carousel/lib/styles.css";
+import PropertyCard from "./PropertyCard/PropertyCard";
+
+import {dummyProperies} from "./dummyData";
 const Featured = () => {
 	const responsive = {
 		superLargeDesktop: {
@@ -21,7 +24,7 @@ const Featured = () => {
 		},
 		desktop: {
 			breakpoint: {max: 3000, min: 1024},
-			items: 3,
+			items: 4,
 		},
 		tablet: {
 			breakpoint: {max: 1024, min: 464},
@@ -38,7 +41,46 @@ const Featured = () => {
 		right: true,
 	});
 
+	const [activeTab, setActiveTab] = useState("House");
+
 	const carouselRef = useRef();
+
+	const handleLeftArrow = () => {
+		const prevSlide = carouselRef.current.state.currentSlide - 1;
+		carouselRef.current.previous();
+		carouselRef.current.goToSlide(prevSlide);
+		if (prevSlide === 0) {
+			setActiveArrow({
+				left: false,
+				right: true,
+			});
+			return;
+		}
+		setActiveArrow({
+			left: true,
+			right: true,
+		});
+	};
+
+	const handleRightArrow = () => {
+		const nextSlide = carouselRef.current.state.currentSlide + 1;
+		carouselRef.current.next();
+		carouselRef.current.goToSlide(nextSlide);
+		if (
+			nextSlide ===
+			carouselRef.current.state.totalItems - carouselRef.current.state.slidesToShow
+		) {
+			setActiveArrow({
+				left: true,
+				right: false,
+			});
+			return;
+		}
+		setActiveArrow({
+			left: true,
+			right: true,
+		});
+	};
 	return (
 		<div className='featured'>
 			<div className='featured__container'>
@@ -46,65 +88,57 @@ const Featured = () => {
 					<h2>Featured Stays</h2>
 				</div>
 				<div className='featured__container-tabs'>
-					<button>
+					<button
+						className={activeTab === "House" ? "active" : ""}
+						onClick={() => setActiveTab("House")}
+						type='button'>
 						<FontAwesomeIcon icon={faHouse} />
 						House
 					</button>
-					<button>
+					<button
+						className={activeTab === "Hotel" ? "active" : ""}
+						onClick={() => setActiveTab("Hotel")}
+						type='button'>
 						<FontAwesomeIcon icon={faHotel} />
 						Hotel
 					</button>
-					<button>
+					<button
+						className={activeTab === "Apartment" ? "active" : ""}
+						onClick={() => setActiveTab("Apartment")}
+						type='button'>
 						<FontAwesomeIcon icon={faBuilding} />
 						Apartment
 					</button>
 				</div>
 				<div className='featured__container-arrows'>
 					<button
-						onClick={() => {
-							const prevSlide = carouselRef.current.state.currentSlide - 1;
-							if (prevSlide === 0) {
-								setActiveArrow({
-									left: false,
-									right: true,
-								});
-							}
-							carouselRef.current.previous();
-							carouselRef.current.goToSlide(prevSlide);
-						}}
+						onClick={handleLeftArrow}
 						className={activeArrow.left ? "active" : ""}
 						disabled={!activeArrow.left}>
 						<FontAwesomeIcon icon={faChevronLeft} />
 					</button>
 					<button
-						onClick={() => {
-							const nextSlide = carouselRef.current.state.currentSlide + 1;
-							if (
-								nextSlide ===
-								Math.ceil(
-									carouselRef.current.state.totalItems / carouselRef.current.state.slidesToShow
-								)
-							) {
-								setActiveArrow({
-									left: true,
-									right: false,
-								});
-							}
-							carouselRef.current.next();
-							carouselRef.current.goToSlide(nextSlide);
-						}}
+						onClick={handleRightArrow}
 						className={activeArrow.right ? "active" : ""}
 						disabled={!activeArrow.right}>
 						<FontAwesomeIcon icon={faChevronRight} />
 					</button>
 				</div>
 			</div>
-			<Carousel responsive={responsive} ref={carouselRef}>
-				<div>item</div>
-				<div>item</div>
-				<div>item</div>
-				<div>item</div>
-				<div>item</div>
+			<Carousel
+				responsive={responsive}
+				ref={carouselRef}
+				arrows={false}
+				containerClass='carousel-container'>
+				{dummyProperies.map((property) => (
+					<PropertyCard
+						name={property.name}
+						roomNumber={property.roomNumber}
+						price={property.price}
+						source={property.source}
+						key={property.id}
+					/>
+				))}
 			</Carousel>
 		</div>
 	);

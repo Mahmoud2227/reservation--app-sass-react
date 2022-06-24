@@ -8,7 +8,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		margin-bottom: 4rem;
+		margin-bottom: 2rem;
 	}
 
 	.featured__container-title {
@@ -55,7 +55,7 @@
 			cursor: pointer;
 
 			&:hover,
-			.active {
+			&.active {
 				background-color: $color-secondary;
 				color: white;
 				border-color: $color-secondary;
@@ -90,5 +90,8 @@
         margin-right: 5px;
       }
 		}
+	}
+	.carousel-container {
+		padding: 1.5rem;
 	}
 }

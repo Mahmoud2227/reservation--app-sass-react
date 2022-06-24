@@ -1,0 +1,116 @@
+@use "../../../SassStyles/variables" as *;
+
+.property__card {
+	max-width: 274px;
+	padding: 0.75rem;
+  border-radius: 10px;
+
+	display: flex;
+	flex-direction: column;
+
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: 0px 7px 17px 5px rgba(0, 0, 0, 0.25);
+  }
+
+	.property__card__image {
+		margin-bottom: 1rem;
+
+		img {
+			border-radius: 10px;
+		}
+	}
+
+	.property__card__info {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		margin-bottom: 1rem;
+		h4 {
+			font-weight: 700;
+			font-size: 20px;
+			line-height: 27px;
+
+			color: #333333;
+		}
+
+		.property__card__info-props {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			span {
+				font-weight: 500;
+				font-size: 0.5rem;
+				line-height: 6px;
+
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				gap: 4px;
+
+				&:first-child {
+					margin-right: 5px;
+				}
+
+				svg {
+					font-size: 0.8rem;
+				}
+			}
+		}
+	}
+	.property__card__price {
+		margin-bottom: 1rem;
+
+		p {
+			font-weight: 500;
+			font-size: 20px;
+			line-height: 18px;
+
+			color: $color-primary;
+
+			span {
+				font-weight: 500;
+				font-size: 10px;
+				line-height: 6px;
+
+				color: black;
+			}
+		}
+	}
+
+	.property__card__group {
+		display: flex;
+		align-items: center;
+
+		margin-bottom: 1rem;
+
+		p {
+			font-weight: 500;
+			font-size: 10.345px;
+			line-height: 6px;
+
+			margin-left: 5px;
+		}
+	}
+
+	.property__card__button {
+		padding: 1rem 3.5rem;
+		font-weight: 700;
+		font-size: 10.4836px;
+		line-height: 13px;
+		color: white;
+		background-color: $color-secondary;
+
+		border-radius: 7px;
+		border: none;
+		outline: none;
+
+    align-self: center;
+
+    cursor: pointer;
+	}
+}
