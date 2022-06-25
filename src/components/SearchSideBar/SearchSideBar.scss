@@ -1,0 +1,124 @@
+@use "../../SassStyles/variables" as *;
+
+.search-sidebar {
+	padding: 1rem 0.8rem;
+	background-color: $color-primary;
+
+	width: fit-content;
+	border-radius: 10px;
+
+	& * {
+		color: white;
+	}
+
+	h3 {
+		font-weight: 700;
+		font-size: 25px;
+		line-height: 37px;
+		margin-bottom: 0.5rem;
+	}
+
+	.search-sidebar-input {
+		position: relative;
+
+		.searchBar__item-data-range {
+			position: absolute;
+			top: 60px;
+			left: 0;
+			z-index: 999;
+		}
+
+		h5 {
+			font-weight: 600;
+			font-size: 13px;
+			line-height: 18px;
+
+			margin-bottom: 0.5rem;
+		}
+
+		input {
+			border: none;
+			outline: none;
+
+			width: 100%;
+			padding: 0.5rem 1rem;
+			border-radius: 10px;
+			margin-bottom: 1rem;
+
+			color: #676767;
+
+			::placeholder {
+				color: #676767;
+			}
+
+			&[type="button"] {
+				cursor: pointer;
+			}
+		}
+	}
+
+	.search-sidebar-options {
+		h5 {
+			font-weight: 600;
+			font-size: 13px;
+			line-height: 18px;
+
+			margin-bottom: 0.5rem;
+		}
+
+		.search-sidebar-options-input {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			margin-bottom: 1rem;
+
+			&:first-of-type {
+				position: relative;
+
+				> button {
+					width: 100%;
+					background-color: white;
+					color: #676767;
+					padding: 0.5rem 1rem;
+
+					border: none;
+					outline: none;
+					border-radius: 10px;
+					cursor: pointer;
+				}
+			}
+
+			label {
+				font-weight: 500;
+				font-size: 10px;
+				line-height: 18px;
+			}
+
+			input {
+				width: 50px;
+				padding: 0.2rem 0 0.2rem 0.2rem;
+				color: black;
+
+				border: none;
+				outline: none;
+
+				border-radius: 5px;
+			}
+		}
+	}
+	.search-sidebar-button {
+		width: 100%;
+		padding: 1rem 3rem;
+		background-color: $color-secondary;
+
+		border: none;
+		outline: none;
+		border-radius: 7px;
+
+		font-weight: 700;
+		font-size: 10.4836px;
+		line-height: 13px;
+		cursor: pointer;
+	}
+}

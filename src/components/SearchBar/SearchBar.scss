@@ -7,7 +7,7 @@
 	transform: translateX(-50%);
 	width: calc(100% - 12rem);
 	z-index: 1;
-	
+
 	.searchBar__container {
 		display: flex;
 		align-items: center;
@@ -18,6 +18,7 @@
 		border: 3px solid $color-secondary;
 
 		.searchBar__item {
+			position: relative;
 			display: flex;
 			align-items: stretch;
 			justify-content: center;
@@ -58,16 +59,7 @@
 
 			.searchBar__item-data-range {
 				position: absolute;
-				top: 50px;
-			}
-
-			.searchBar__item-options {
-				position: absolute;
-				top: 50px;
-				background-color: white;
-				color: black;
-				border-radius: 5px;
-				box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
+				top: 40px;
 			}
 		}
 	}

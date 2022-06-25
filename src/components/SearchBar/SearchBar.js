@@ -1,4 +1,5 @@
 import {useState} from "react";
+import {useNavigate} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBed, faPerson} from "@fortawesome/free-solid-svg-icons";
 
@@ -9,7 +10,7 @@ import "react-date-range/dist/theme/default.css"; // theme css file
 import {faCalendarDays} from "@fortawesome/free-regular-svg-icons";
 import {DateRange} from "react-date-range";
 import {format} from "date-fns";
-import OptionItem from "./OptionItem/OptionItem";
+import OptionsCard from "../OptionsCard/OptionsCard";
 
 const SearchBar = () => {
 	const [openDate, setOpenDate] = useState(false);
@@ -27,12 +28,26 @@ const SearchBar = () => {
 		children: 0,
 		rooms: 1,
 	});
+
+	const [destination, setDestination] = useState("");
+
+	const navigate = useNavigate();
+
+	const handleSearch = () => {
+		navigate("/hotels", {state: {destination, date, options}});
+	};
+
 	return (
 		<div className='searchBar'>
 			<div className='searchBar__container'>
 				<div className='searchBar__item'>
 					<FontAwesomeIcon icon={faBed} />
-					<input type='text' placeholder='Where are you going?' className='searchBar__item-input' />
+					<input
+						type='text'
+						placeholder='Where are you going?'
+						className='searchBar__item-input'
+						onChange={(e) => setDestination(e.target.value)}
+					/>
 				</div>
 				<div className='searchBar__item'>
 					<FontAwesomeIcon icon={faCalendarDays} />
@@ -56,20 +71,12 @@ const SearchBar = () => {
 						onClick={() =>
 							setOpenOptions((prevState) => !prevState)
 						}>{`${options.adult} adult . ${options.children} children . ${options.rooms} rooms`}</span>
-					{openOptions && (
-						<div className='searchBar__item-options'>
-							<OptionItem optionName='adult' setFunction={setOptions} optionValue={options.adult} />
-							<OptionItem
-								optionName='children'
-								setFunction={setOptions}
-								optionValue={options.children}
-							/>
-							<OptionItem optionName='rooms' setFunction={setOptions} optionValue={options.rooms} />
-						</div>
-					)}
+					{openOptions && <OptionsCard options={options} setOptions={setOptions} />}
 				</div>
 				<div className='searchBar__item'>
-					<button className='searchBar__item-button'>Search</button>
+					<button className='searchBar__item-button' onClick={handleSearch}>
+						Search
+					</button>
 				</div>
 			</div>
 		</div>

@@ -6,6 +6,10 @@
 	justify-content: space-between;
 	margin: 1rem;
 
+	.option__text {
+		color: black;
+	}
+
 	.option__counter {
 		min-width: 90px;
 		display: flex;
