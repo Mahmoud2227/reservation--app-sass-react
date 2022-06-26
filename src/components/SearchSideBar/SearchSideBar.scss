@@ -3,8 +3,8 @@
 .search-sidebar {
 	padding: 1rem 0.8rem;
 	background-color: $color-primary;
-
 	width: fit-content;
+	min-width: 235px;
 	border-radius: 10px;
 
 	& * {

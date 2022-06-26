@@ -1,0 +1,127 @@
+@use "../../SassStyles/variables" as *;
+
+.searchItem {
+	display: flex;
+	gap: 20px;
+	padding: 1rem;
+	border: 1px #ccc solid;
+	border-radius: 3px;
+
+	.searchItem__image {
+		img {
+			max-width: 200px;
+			border-radius: 10px;
+		}
+	}
+
+	.searchItem__content {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+
+		.searchItem__content-header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			h2 {
+				font-size: 20px;
+				color: $color-primary;
+        transition: 0.2s;
+        cursor: pointer;
+        &:hover {
+          color: $color-secondary;
+        }
+			}
+
+			.searchItem__content-header-rating {
+				display: flex;
+				align-items: center;
+
+				p {
+					font-weight: 600;
+					margin-right: 0.5rem;
+				}
+
+				span {
+					background-color: $color-primary;
+					color: white;
+					padding: 0.5rem;
+					border-radius: 5px 5px 5px 0;
+					font-weight: 500;
+				}
+			}
+		}
+
+		.searchItem__content-destination {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+			font-size: 14px;
+      margin-bottom: 0.5rem;
+		}
+    
+    .searchItem__content-features {
+      margin-bottom: 0.8rem;
+      span {
+        display: block;
+        color: $color-primary;
+        
+        &:first-child {
+          margin-bottom: 5px;
+        }
+      }
+    }
+
+    .searchItem__content-info {
+      display: flex;
+      justify-content: space-between;
+      .searchItem__content-info-description {
+        padding: 0.2rem 0.5rem;
+
+        border-left: 2px #ddd solid;
+        h5 {
+          font-size: 12px;
+          font-weight: 700;
+          margin-bottom: 0.3rem;
+        }
+
+        p {
+          font-size: 12px;
+          font-weight: 400;
+        }
+      }
+
+      .searchItem__content-info-price {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+
+        span {
+          font-size: 20px;
+          font-weight: 700;
+        }
+
+        p {
+          font-size: 12px;
+          font-weight: 400;
+          color: #c7c7c7;
+        }
+      }
+    }
+
+    .searchItem__content-button {
+      align-self: flex-end;
+      padding: 0.6rem 1rem;
+      background-color: $color-secondary;
+      color: white;
+      font-weight: 600;
+
+      border:none;
+      border-radius: 10px;
+      outline: none;
+      cursor: pointer;
+    }
+	}
+}
