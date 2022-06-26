@@ -73,6 +73,7 @@ const SearchSideBar = () => {
 						onChange={(item) => setDate([item.selection])}
 						moveRangeOnFirstSelection={false}
 						ranges={date}
+						minDate={new Date()}
 						className='searchBar__item-data-range'
 					/>
 				)}
