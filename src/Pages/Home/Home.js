@@ -1,6 +1,4 @@
-import {Featured, Footer, Header, Hero} from "../../components";
-import BecomeHost from "../../components/BecomeHost/BecomeHost";
-import PopularCities from "../../components/PopularCities/PopularCities";
+import {Featured, Footer, Header, Hero, PopularCities, BecomeHost} from "../../components";
 
 const Home = () => {
 	return (

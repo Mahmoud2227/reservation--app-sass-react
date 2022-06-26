@@ -1,6 +1,5 @@
 import React from "react";
-import {Footer, Header} from "../../components";
-import SearchSideBar from "../../components/SearchSideBar/SearchSideBar";
+import {Footer, Header, SearchSideBar} from "../../components";
 
 const List = () => {
 	return (
