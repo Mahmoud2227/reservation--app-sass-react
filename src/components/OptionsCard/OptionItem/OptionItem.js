@@ -13,11 +13,14 @@ const OptionItem = ({optionName, setFunction, optionValue}) => {
 			<div className='option__counter'>
 				<button
 					disabled={optionValue <= (optionName === "children" ? 0 : 1)}
-					onClick={() => handleOptions(optionName, "dec")}>
+					onClick={() => handleOptions(optionName, "dec")}
+					type='button'>
 					-
 				</button>
 				<span>{optionValue}</span>
-				<button onClick={() => handleOptions(optionName, "inc")}>+</button>
+				<button onClick={() => handleOptions(optionName, "inc")} type='button'>
+					+
+				</button>
 			</div>
 		</div>
 	);
