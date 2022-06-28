@@ -1,0 +1,154 @@
+@use "../../SassStyles/variables" as *;
+
+.property {
+	.property__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.property__header-content {
+			.property__header-content-title {
+				font-size: 26px;
+				color: $color-primary;
+				margin-bottom: 10px;
+			}
+
+			.property__header-content-location {
+				font-size: 16px;
+				color: #575757;
+				margin-bottom: 10px;
+
+				svg {
+					margin-right: 5px;
+				}
+			}
+		}
+
+		.property__header-book-button {
+			padding: 1rem 2rem;
+			background-color: $color-secondary;
+			color: white;
+			font-weight: 700;
+
+			border: none;
+			border-radius: 10px;
+			outline: none;
+
+			cursor: pointer;
+		}
+	}
+
+	.property__distance {
+		font-size: 14px;
+		color: $color-primary;
+		margin-bottom: 10px;
+	}
+
+	.property__price-highlight {
+		width: fit-content;
+		font-size: 12px;
+		padding: 3px;
+		border-radius: 5px;
+		color: #245c27;
+		background-color: #e8f5e9;
+	}
+
+	.property__images {
+		margin-block: 1rem;
+		.property__images-top {
+			display: grid;
+			grid-template-areas: "smallImage1 bigImage bigImage" "smallImage2 bigImage bigImage";
+			grid-gap: 10px;
+
+			margin-bottom: 10px;
+
+			img {
+				width: 100%;
+
+				&:nth-child(1) {
+					grid-area: bigImage;
+				}
+				&:nth-child(2) {
+					grid-area: smallImage1;
+				}
+				&:nth-child(3) {
+					grid-area: smallImage2;
+				}
+			}
+		}
+
+		.property__images-bottom {
+			display: flex;
+			justify-content: space-between;
+			gap: 10px;
+
+			img {
+				max-width: calc((100% / 3) - 10px);
+			}
+		}
+	}
+
+	.property__info {
+		display: flex;
+    gap: 3rem;
+		.property__info-description {
+			font-size: 16px;
+
+			* + p {
+				margin-top: 1rem;
+			}
+		}
+
+		.property__info-highlights {
+      min-width: 300px;
+      background-color: #ebf3ff;
+      padding: 1rem;
+			h2 {
+				font-size: 16px;
+        margin-bottom: 0.5rem;
+			}
+
+			h3 {
+				font-size: 14px;
+        margin-bottom: 0.5rem;
+			}
+      span {
+        display: block;
+        font-size: 13px;
+        margin-bottom: 0.5rem;
+
+        &:first-of-type {
+          display: flex;
+          gap: 0.5rem;
+          align-items: center;
+
+          svg {
+            font-size: 20px;
+          }
+        }
+
+        &:last-of-type {
+          margin-block: 1rem;
+          font-size: 24px;
+
+          b {
+            margin-right: 5px;
+          }
+        }
+      }
+      button {
+        padding: 1rem 2rem;
+        background-color: $color-secondary;
+        color: white;
+        width: 100%;
+        font-weight: 700;
+
+        border: none;
+        border-radius: 10px;
+        outline: none;
+
+        cursor: pointer;
+      }
+		}
+	}
+}
