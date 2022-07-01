@@ -1,4 +1,5 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {useNavigate} from "react-router-dom";
 
 import {faUmbrellaBeach, faLeaf, faChevronRight} from "@fortawesome/free-solid-svg-icons";
 
@@ -7,6 +8,10 @@ import Hotel from "../../assets/hotel.webp";
 import "./SearchItem.scss";
 
 const SearchItem = () => {
+	const navigate = useNavigate();
+	const handleClick = () => {
+		navigate("/stays/1");
+	};
 	return (
 		<div className='searchItem'>
 			<div className='searchItem__image'>
@@ -44,7 +49,7 @@ const SearchItem = () => {
 						<p>includes taxes and feels</p>
 					</div>
 				</div>
-				<button className='searchItem__content-button' type='button'>
+				<button className='searchItem__content-button' type='button' onClick={handleClick}>
 					See availability <FontAwesomeIcon icon={faChevronRight} />
 				</button>
 			</div>
