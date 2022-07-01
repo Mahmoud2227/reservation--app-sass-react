@@ -151,4 +151,53 @@
       }
 		}
 	}
+
+	.property__image-slideshow {
+		width: 100vw;
+		height: 100vh;
+		background-color: rgba(0, 0, 0, 0.545);
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 999;
+		display: flex;
+		align-items: center;
+
+		.property__image-slideshow-wrapper {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			img {
+				height: 80vh
+			};
+			
+			svg {
+				position: absolute;
+				font-size: 50px;
+				color: lightgray;
+				cursor: pointer;
+				user-select: none;
+			}
+			.property__image-slideshow-wrapper-closeIcon {
+				top: 2.5rem;
+				right: 5rem;
+			}
+			
+			.property__image-slideshow-wrapper-leftIcon {
+				top: 50%;
+				left: 10rem;
+			}
+
+			.property__image-slideshow-wrapper-rightIcon {
+				top: 50%;
+				right: 10rem;
+			}
+
+		}
+
+	}
 }
