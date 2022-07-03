@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 
 import authRoute from "./routes/auth.js";
+import userRoute from "./routes/user.js";
 
 import errorHandler from "./middleware/errorHandler.js";
 
@@ -16,6 +17,7 @@ app.use(cookieParser());
 app.use(express.json());
 
 app.use("/api/v1/auth", authRoute);
+app.use("/api/v1/users", userRoute);
 
 app.use(errorHandler);
 
