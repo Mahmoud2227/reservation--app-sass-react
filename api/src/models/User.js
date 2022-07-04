@@ -20,6 +20,10 @@ const userSchema = new mongoose.Schema({
 		trim: true,
 		unique: true,
 	},
+	isAdmin: {
+		type: Boolean,
+		default: false,
+	},
 });
 
 userSchema.methods.generateAuthToken = async function () {
