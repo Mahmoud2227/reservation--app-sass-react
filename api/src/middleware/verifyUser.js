@@ -1,15 +1,10 @@
-import verifyToken from "./verifyToken.js";
+import createError from "../utils/createError.js";
 
-const verifyUser = async (req, res, next) => {
-	try {
-		await verifyToken(req, res, next);
-		if (req.user.id === req.params.id || req.user.isAdmin) {
-			next();
-		}
-	} catch (error) {
-		return res.status(401).json({
-			error: "Unauthorized",
-		});
+const verifyUser = (req, res, next) => {
+	if (req.user._id.toString() === req.params.id || req.user.isAdmin) {
+		next();
+	} else {
+		return next(createError(403, "Unauthorized"));
 	}
 };
 

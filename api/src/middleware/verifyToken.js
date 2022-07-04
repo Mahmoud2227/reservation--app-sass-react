@@ -1,18 +1,19 @@
+import jwt from "jsonwebtoken";
+
+import createError from "../utils/createError.js";
+import User from "../models/User.js";
+
 const verifyToken = async (req, res, next) => {
 	const token = req.cookies.token;
 	if (!token) {
-		return res.status(401).json({
-			error: "Unauthorized",
-		});
+		return next(createError(401, "unauthorized"));
 	}
 	try {
-		const decoded = await jwt.verify(token, process.env.JWT_SECRET);
-		req.user = decoded.user;
+		const decoded = jwt.verify(token, process.env.JWT_SECRET);
+		req.user = await User.findById(decoded.user._id);
 		next();
 	} catch (err) {
-		return res.status(403).json({
-			error: "Token is invalid!",
-		});
+		next(createError(403, "Invalid token"));
 	}
 };
 
