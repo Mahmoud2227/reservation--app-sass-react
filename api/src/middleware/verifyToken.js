@@ -10,7 +10,7 @@ const verifyToken = async (req, res, next) => {
 	}
 	try {
 		const decoded = jwt.verify(token, process.env.JWT_SECRET);
-		req.user = await User.findById(decoded.user._id);
+		req.user = await User.findById(decoded._id);
 		next();
 	} catch (err) {
 		next(createError(403, "Invalid token"));
