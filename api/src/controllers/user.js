@@ -26,7 +26,7 @@ export const UpdateUserInfo = async (req, res, next) => {
 
 	try {
 		if (!isValidUpdate || !isValidAdminUpdate) {
-			next(createError(400, "Invalid updates!"));
+			return next(createError(400, "Invalid updates!"));
 		} else {
 			updates.forEach((update) => (req.user[update] = req.body[update]));
 			await req.user.save();
@@ -34,5 +34,14 @@ export const UpdateUserInfo = async (req, res, next) => {
 		}
 	} catch (error) {
 		next(error);
+	}
+};
+
+export const deleteUser = async (req, res, next) => {
+	try {
+		const user = User.findByIdAndDelete({_id: req.params.id});
+		res.status(200).send(user)
+	} catch (error) {
+		next(error)
 	}
 };
