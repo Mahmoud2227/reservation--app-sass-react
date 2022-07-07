@@ -1,3 +1,5 @@
+import sharp from "sharp";
+
 import User from "../models/User.js";
 import createError from "../utils/createError.js";
 
@@ -40,8 +42,39 @@ export const UpdateUserInfo = async (req, res, next) => {
 export const deleteUser = async (req, res, next) => {
 	try {
 		const user = User.findByIdAndDelete({_id: req.params.id});
-		res.status(200).send(user)
+		res.status(200).send(user);
+	} catch (error) {
+		next(error);
+	}
+};
+
+export const uploadAvatar = async (req, res, next) => {
+	try {
+		const buffer = await sharp(req.file.buffer).resize(250,250).png().toBuffer()
+		await User.findByIdAndUpdate(req.params.id, {avatar: buffer});
+		res.status(200).send();
+	} catch (error) {
+		next(error);
+	}
+};
+
+export const getAvatar = async(req,res,next) => {
+	try {
+		const user = await User.findById(req.params.id);
+		res.set("Content-Type","image/png")
+		res.send(user.avatar)
 	} catch (error) {
 		next(error)
 	}
-};
+}
+
+export const deleteAvatar = async (req, res, next) => {
+	try {
+		const user = await User.findById(req.params.id)
+		user.avatar= undefined;
+		await user.save()
+		res.status(200).send();
+	} catch (error) {
+		next(error);
+	}
+}

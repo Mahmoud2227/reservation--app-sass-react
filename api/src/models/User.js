@@ -20,6 +20,9 @@ const userSchema = new mongoose.Schema({
 		trim: true,
 		unique: true,
 	},
+	avatar: {
+		type: Buffer,
+	},
 	isAdmin: {
 		type: Boolean,
 		default: false,
