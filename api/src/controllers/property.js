@@ -12,12 +12,21 @@ export const createProperty = async (req, res, next) => {
 };
 
 export const getPropertyListByUser = async (req, res, next) => {
-  try {
-    const user = await User.findById(req.params.ownerId)
-    await user.populate({path:"property"})
-    const propertyList = user.property
-    res.status(200).send(propertyList)
-  } catch (error) {
-    next(error)
-  }
+	try {
+		const user = await User.findById(req.params.ownerId);
+		await user.populate({path: "property"});
+		const propertyList = user.property;
+		res.status(200).send(propertyList);
+	} catch (error) {
+		next(error);
+	}
+};
+
+export const getPropertyList = async (req, res, next) => {
+	try {
+		const propertyList = await Property.find({});
+		res.status(200).send(propertyList);
+	} catch (error) {
+		next(error);
+	}
 };
