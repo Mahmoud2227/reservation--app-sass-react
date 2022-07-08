@@ -7,9 +7,9 @@ import {createProperty, getPropertyById, getPropertyList, getPropertyListByUser}
 
 const router = express.Router();
 
-router.post("/:ownerId", verifyToken, verifyUser, createProperty);
+router.post("/:id", verifyToken, verifyUser, createProperty);
 
-router.get("/:ownerId", verifyToken, verifyUser, getPropertyListByUser);
+router.get("/:id", verifyToken, verifyUser, getPropertyListByUser);
 
 router.get("/",verifyToken,verifyAdmin,getPropertyList)
 
