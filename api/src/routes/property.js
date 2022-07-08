@@ -1,15 +1,11 @@
 import express from "express";
-import Property from "../models/Property.js";
+
+import verifyToken from "../middleware/verifyToken.js";
+import verifyUser from "../middleware/verifyUser.js";
+import {createProperty} from "../controllers/property.js";
 
 const router = express.Router();
 
-router.post("/", async (req, res) => {
-	const newProperty = new Property(req.body);
+router.post("/:ownerId", verifyToken, verifyUser, createProperty);
 
-	try {
-		await newProperty.save();
-		res.status(201).send(newProperty);
-	} catch (error) {
-		res.status(500).json(error);
-	}
-});
+export default router;

@@ -29,10 +29,6 @@ const PropertySchema = new mongoose.Schema(
 			type: String,
 			required: true,
 		},
-		title: {
-			type: String,
-			required: true,
-		},
 		rating: {
 			type: Number,
 			min: 0,
@@ -49,8 +45,12 @@ const PropertySchema = new mongoose.Schema(
 			type: Boolean,
 			default: false,
 		},
+		owner: {
+			type: mongoose.Schema.Types.ObjectId,
+			required: true,
+			ref: "User"
+		}
 	},
-	{collection: "properties"}
 );
 
 const Property = mongoose.model("Property", PropertySchema);
