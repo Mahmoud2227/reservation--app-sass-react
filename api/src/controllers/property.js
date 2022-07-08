@@ -30,3 +30,12 @@ export const getPropertyList = async (req, res, next) => {
 		next(error);
 	}
 };
+
+export const getPropertyById = async (req,res,next) => {
+  try {
+    const property = await Property.findOne({_id:req.params.propertyId,owner:req.params.id})
+    res.status(200).send(property);
+  } catch (error) {
+    next(error)
+  }
+}
