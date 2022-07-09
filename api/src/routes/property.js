@@ -24,6 +24,6 @@ router.get("/:id/:propertyId", verifyToken, verifyUser, getPropertyById);
 
 router.patch("/:id/:propertyId",verifyToken,verifyUser,updateProperty)
 
-router.delete("/:propertyId", verifyToken, verifyUser, deleteProperty);
+router.delete("/:id/:propertyId", verifyToken, verifyUser, deleteProperty);
 
 export default router;
