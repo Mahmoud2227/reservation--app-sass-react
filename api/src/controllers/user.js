@@ -5,7 +5,8 @@ import createError from "../utils/createError.js";
 
 export const getUserInfo = async (req, res, next) => {
 	try {
-		return res.status(200).send(req.user);
+		const user = await User.findById(req.params.id)
+		return res.status(200).send(user);
 	} catch (error) {
 		next(error);
 	}
@@ -30,9 +31,10 @@ export const UpdateUserInfo = async (req, res, next) => {
 		if (!isValidUpdate || !isValidAdminUpdate) {
 			return next(createError(400, "Invalid updates!"));
 		} else {
-			updates.forEach((update) => (req.user[update] = req.body[update]));
-			await req.user.save();
-			return res.status(200).send(req.user);
+			const user = await User.findById(req.params.id)
+			updates.forEach((update) => (user[update] = req.body[update]));
+			await user.save();
+			return res.status(200).send(user);
 		}
 	} catch (error) {
 		next(error);
