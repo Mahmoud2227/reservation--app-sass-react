@@ -40,6 +40,15 @@ export const getPropertyById = async (req,res,next) => {
   }
 }
 
+export const updateProperty = async (req,res,next)=>{
+	try {
+		const property = await Property.findByIdAndUpdate(req.params.propertyId, {$set:req.body},{new:true} );
+		res.status(200).send(property);
+	} catch (error) {
+		next(error)
+	}
+}
+
 export const deleteProperty = async(req, res,next)=>{
 	try {
 		const property = await Property.findByIdAndDelete(req.params.propertyId)

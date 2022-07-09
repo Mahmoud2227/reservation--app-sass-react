@@ -9,6 +9,7 @@ import {
 	getPropertyById,
 	getPropertyList,
 	getPropertyListByUser,
+  updateProperty,
 } from "../controllers/property.js";
 
 const router = express.Router();
@@ -20,6 +21,8 @@ router.get("/:id", verifyToken, verifyUser, getPropertyListByUser);
 router.get("/", verifyToken, verifyAdmin, getPropertyList);
 
 router.get("/:id/:propertyId", verifyToken, verifyUser, getPropertyById);
+
+router.patch("/:id/:propertyId",verifyToken,verifyUser,updateProperty)
 
 router.delete("/:propertyId", verifyToken, verifyUser, deleteProperty);
 
