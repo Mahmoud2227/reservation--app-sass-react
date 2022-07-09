@@ -39,3 +39,12 @@ export const getPropertyById = async (req,res,next) => {
     next(error)
   }
 }
+
+export const deleteProperty = async(req, res,next)=>{
+	try {
+		const property = await Property.findByIdAndDelete(req.params.propertyId)
+		res.status(200).send(property);
+	} catch (error) {
+		next(error)
+	}
+};
