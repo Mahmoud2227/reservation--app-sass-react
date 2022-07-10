@@ -21,7 +21,8 @@ const roomSchema = new mongoose.Schema(
 		roomNumbers: [{number: Number, unavailableDates: {type: [Date]}}],
     propertyId : {
       type:mongoose.Schema.Types.ObjectId,
-      required:true
+      required:true,
+			ref:"Property"
     }
 	},
 	{timestamps: true}
