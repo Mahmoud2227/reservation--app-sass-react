@@ -34,9 +34,6 @@ const PropertySchema = new mongoose.Schema(
 			min: 0,
 			max: 5,
 		},
-		rooms: {
-			type: [String],
-		},
 		cheapestPrice: {
 			type: Number,
 			required: true,
@@ -52,6 +49,12 @@ const PropertySchema = new mongoose.Schema(
 		}
 	},
 );
+
+PropertySchema.virtual("rooms",{
+	ref:"Room",
+	localField:"_id",
+	foreignField:"propertyId"
+})
 
 const Property = mongoose.model("Property", PropertySchema);
 
