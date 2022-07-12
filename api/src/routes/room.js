@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.post("/:id/:propertyId", verifyToken, verifyUser, createRoom);
 
-router.get("/:id/:propertyId", verifyToken, verifyUser, getRoomsByProperty);
+router.get("/:id/:propertyId", getRoomsByProperty);
 
 router.get("/get/:id/:roomId",verifyToken,verifyUser,getRoomById);
 
