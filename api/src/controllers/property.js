@@ -57,3 +57,18 @@ export const deleteProperty = async(req, res,next)=>{
 		next(error)
 	}
 };
+
+export const getFeaturedCities = async (req, res, next) => {
+	try {
+		const property = await Property.find({});
+		const cities = property.map((el) => el.city.toLowerCase());
+		const citesCount = [...new Set(cities)].map(city => {
+			const count = property.filter(el => el.city.toLowerCase() === city).length
+			return ({city,count})
+		})
+		const featuredCites = citesCount.sort((a,b)=> b.count-a.count)
+		res.send(featuredCites.slice(0,3))
+	} catch (error) {
+		next(error);
+	}
+};
