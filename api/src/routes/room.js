@@ -1,5 +1,5 @@
 import express from "express";
-import {createRoom, getRoomById, getRoomsByProperty, updateRoom} from "../controllers/room.js";
+import {createRoom, deleteRoom, getRoomById, getRoomsByProperty, updateRoom} from "../controllers/room.js";
 
 import verifyToken from "../middleware/verifyToken.js";
 import verifyUser from "../middleware/verifyUser.js";
@@ -13,5 +13,7 @@ router.get("/:propertyId", getRoomsByProperty);
 router.get("/get/:id/:roomId", verifyToken, verifyUser, getRoomById);
 
 router.patch("/:id/:roomId", verifyToken, verifyUser, updateRoom);
+
+router.delete("/:id/:roomId",verifyToken,verifyUser,deleteRoom)
 
 export default router;

@@ -46,3 +46,12 @@ export const updateRoom = async (req,res,next) => {
     next(error)
   }
 }
+
+export const deleteRoom = async (req,res,next) => {
+  try {
+    const room = await Room.findByIdAndDelete(req.params.roomId)
+    res.status(200).send(room)
+  } catch (error) {
+    next(error)
+  }
+}
