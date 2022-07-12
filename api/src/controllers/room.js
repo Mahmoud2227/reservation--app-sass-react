@@ -21,3 +21,12 @@ export const getRoomsByProperty = async (req, res, next) => {
 		next(error);
 	}
 };
+
+export const getRoomById = async (req,res,next) => {
+  try {
+    const room = await Room.findById(req.params.roomId)
+    res.status(200).send(room);
+  } catch (error) {
+    next(error)
+  }
+}
