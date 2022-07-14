@@ -67,7 +67,7 @@ export const getFeaturedCities = async (req, res, next) => {
 			return ({city,count})
 		})
 		const featuredCites = citesCount.sort((a,b)=> b.count-a.count)
-		res.send(featuredCites.slice(0,3))
+		res.send(featuredCites.slice(0,4))
 	} catch (error) {
 		next(error);
 	}
