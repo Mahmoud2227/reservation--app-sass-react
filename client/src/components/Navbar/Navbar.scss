@@ -44,7 +44,7 @@
                     transition: 0.2s;
                 }
 
-                &:hover {
+                &:hover,&.active {
                     color: $color-secondary;
 
                     &::after {
